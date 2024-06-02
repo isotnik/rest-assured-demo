@@ -56,7 +56,7 @@ public class JiraSmokeE2ETest extends JiraBaseTest {
                 .pathParam("issueKey", issueKey)
                 .queryParam("fields", "summary, description, comment, attachment")
                 .get(ApiResources.GET_ISSUE.toString())
-                .then().log().all().assertThat().statusCode(200).extract().response().as(GetIssueResponse.class);
+                .then().assertThat().statusCode(200).extract().response().as(GetIssueResponse.class);
         Assert.assertEquals(getIssueResponse.getFields().getSummary(), summary);
         Assert.assertEquals(getIssueResponse.getDescriptionText(), description);
         Assert.assertEquals(getIssueResponse.getFirstAttachmentFileName(), toAttach.getName());
