@@ -7,4 +7,4 @@ There are smoke E2E test for Jira Rest API using plain TestNG as well as Cucumbe
 To run tests:
 1. Create properties file in `src/main/resources/jira.properties` (use `jira_example.properties` as an example)
 2. Execute `mvn test -Dtest=JiraSmokeE2ETest` for "plain" Jira smoke tests
-3. Execute `mvn test -Dtest=JiraSmokeE2ECucumberTestRunner` for Cucumber  Jira smoke tests
+3. Execute `mvn test -Dtest=JiraSmokeE2ECucumberTest` for Cucumber  Jira smoke tests

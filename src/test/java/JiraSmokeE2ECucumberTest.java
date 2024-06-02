@@ -7,6 +7,6 @@ import io.cucumber.testng.CucumberOptions;
         plugin = {"pretty", "html:target/cucumber-reports/cucumber-html-report.html"},
         monochrome = true
 )
-public class JiraSmokeE2ECucumberTestRunner extends AbstractTestNGCucumberTests {
+public class JiraSmokeE2ECucumberTest extends AbstractTestNGCucumberTests {
 
 }

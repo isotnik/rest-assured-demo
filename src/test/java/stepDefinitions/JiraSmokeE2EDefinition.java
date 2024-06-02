@@ -92,7 +92,7 @@ public class JiraSmokeE2EDefinition extends JiraBaseTest {
         given().spec(requestSpec).when()
                 .pathParam("issueKey", issueKey)
                 .get(ApiResources.GET_ISSUE.toString())
-                .then().assertThat().statusCode(404);
+                .then().assertThat().statusCode(expectedStatusCode);
     }
 
     private GetIssueResponse getIssue(String issueKey) {
