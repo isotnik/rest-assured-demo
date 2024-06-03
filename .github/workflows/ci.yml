@@ -26,7 +26,7 @@ jobs:
           restore-keys: ${{ runner.os }}-maven
 
       - name: Install dependencies
-        run: mvn install -DskipTests
+        run: mvn install -DskipTests -Dskip.cucumber.reports=true
 
       - name: Run tests
         run: mvn test -Dtest=JiraSmokeE2ECucumberTest verify
