@@ -28,6 +28,13 @@ jobs:
       - name: Install dependencies
         run: mvn install -DskipTests -Dskip.cucumber.reports=true
 
+      - name: Create jira.properties file
+        run: |
+          echo "auth=Basic ${{ secrets.JIRA_AUTH }}" > src/main/resources/jira.properties
+          echo "baseUrl=${{ secrets.JIRA_BASE_URL }}" >> src/main/resources/jira.properties
+          echo "projectKey=${{ secrets.JIRA_PROJECT_KEY }}" >> src/main/resources/jira.properties
+          echo "issueType=${{ secrets.JIRA_ISSUE_TYPE }}" >> src/main/resources/jira.properties
+
       - name: Run tests
         run: mvn test -Dtest=JiraSmokeE2ECucumberTest verify
 
